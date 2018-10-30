@@ -119,14 +119,16 @@
 	}
 	
 	.menu {
-		float: right;
-		margin-top: 42px;
+		
 		-webkit-transition: all 0.3s;
 				transition: all 0.3s;
+		display: flex;
+	    justify-content: space-between;
+	    align-items: center;
 	}
 	
 	.menu > li { 
-		float: left; 
+		align-self: center; 
 	}
 	
 	.menu li a {
@@ -138,8 +140,7 @@
 	
 	.menu > li > a {
 		position: relative;
-		padding: 10px 20px 51px 20px;
-		margin-right: 15px;
+		padding: 15px;
 		font-size: 12px;
 		text-transform: uppercase;
 	}
@@ -150,11 +151,19 @@
 	
 	.menu li a:hover,
 	.menu li.active > a,
-	.menu li.sfHover > a {
-		color: #70ae96;
+	.menu li.sfHover > a,
+	.menu li.shop-header-menu > a:hover {
+		background-color: #67e0ce;
+		color: #fff;
 		text-decoration: none;
 	}
+	.menu li.shop-header-menu > a {
+		background-color: #9ffaec;
+	}
 	
+	.menu li:nth-child(5) a:hover {
+		background-color: transparent;
+	}
 	.menu li.dropdown ul {
 		position: absolute;
 		top: 100%;
@@ -164,7 +173,7 @@
 		width: 240px;
 		padding: 25px 0;
 		border: 1px solid #d7d7d7;
-		border-top: 2px solid #70ae96;
+		border-top: 2px solid #67e0ce;
 		background-color: #fff;
 	}
 	
@@ -174,8 +183,8 @@
 	
 	.menu li.dropdown ul li a:before {
 		display: inline-block;
-		color: #70ae96;
-		border: 1px solid #70ae96;
+		color: #67e0ce;
+		border: 1px solid #67e0ce;
 		border-radius: 50%;
 		width: 17px;
 		height: 17px;
@@ -279,7 +288,7 @@
 	}
 		
 	.sf-arrows > li:hover > .sf-with-ul:after { 
-		border-top-color: #70ae96; 
+		border-top-color: #67e0ce; 
 	}
 		
 	.sf-arrows ul .sf-with-ul:after {
@@ -425,7 +434,52 @@
 		border-top-color: transparent;
 		border-bottom-color: #fff;
 	}
-	
+/***********************************************************************************
+ *	- HEADER-INFO
+ *************************************/
+.header-info-wrapper {
+	display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.header-info {
+	display: flex;
+    align-self: center;
+}
+.header-socials {
+	display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.social {
+	display: flex;
+    align-self: center;
+    margin-right: 20px;
+}
+.social:last-child {
+	margin-right: 0;
+}
+.social a {
+	width: 25px;
+    height: 25px;
+    line-height: 25px;
+    background-color: #67e0ce;
+    text-align: center;
+    color: #fff;
+    transition: 0.3s;
+}
+.social-fb:hover a {
+	background-color: #3c5898;
+}
+.social-youtube:hover a {
+	background-color: #e62117;
+}
+.social-insta:hover a {
+	background-color: #e1306c;
+}
 /***********************************************************************************
  *	- SEARCH
  ***********************************************************************************/
@@ -526,11 +580,14 @@
 	}
 		
 	.header-sticky .menu {
-		margin-top: 12px;
+		
 		-webkit-transition: all 0.3s 0.1s;
 				transition: all 0.3s 0.1s;
 	}
-		
+	.header-sticky .menu li {
+		width: 25%;
+		text-align: center;
+	}	
 	.header-sticky .menu li > a {
 		padding-bottom: 20px;
 		-webkit-transition: all 0.3s 0.1s;
@@ -544,7 +601,9 @@
 	.header-sticky a.search-button {
 		display: none;
 	}
-	
+	.header-sticky .header-info-wrapper {
+		display: none;
+	}
 	@media (min-width: 768px) and (max-width: 991px) {
 		
 		#header-sticky {
@@ -564,9 +623,37 @@
 /***********************************************************************************
  *	+ CONTENT
  ***********************************************************************************/
-	
-	
-	
+	.main-banner-box {
+		padding: 100px 0 0;
+	    background: url(../../images/new/main-banner.jpg) no-repeat center center;
+	    text-align: center;
+	    height: 470px;
+	}
+	.main-banner-title {
+		background-color: rgba(255,255,255,0.2);
+		border-radius: 10px;
+		width: 45%;
+		padding: 20px;
+		margin-left: 30px;
+	}
+	.main-banner-text h1 {
+		font-size: 35px;
+		color: #67e0ce;
+		text-align: left;
+	}
+	.main-banner-subtext p {
+		font-size: 20px;
+		font-weight: 500;
+		text-align: left;
+	}
+	.main-banner-subtext:before {
+		content: "";
+	    border-bottom: 2px solid #67e0ce;
+	    width: 35px;
+	    display: block;
+	    margin-top: 15px; 
+	    margin-bottom: 15px;
+	}
 /***********************************************************************************
  *	- PAGE HEADER
  ***********************************************************************************/
@@ -1503,9 +1590,7 @@
 			width: 60%;
 		}
 		
-		.menu > li > a {
-			margin-right: 20px;
-		}
+		
 		
 		.services-boxes.style-4 h3 {
 			padding-top: 20px;
